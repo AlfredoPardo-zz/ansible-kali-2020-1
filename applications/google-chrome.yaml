@@ -1,10 +1,10 @@
 ---
-  - name: Setup Google Chrome
+  - name: Google Chrome Setup 
     hosts: localhost
     connection: local
     become: yes
     gather_facts: no
     tasks:
-      - name: Install Google Chrome Debian Package
+      - name: Installing Google Chrome Debian Package
         apt:
           deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb

@@ -1,0 +1,13 @@
+---
+- name: Calibre Setup 
+  hosts: localhost
+  connection: local
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: Downloading Calibre Installer
+      get_url:
+        url: https://download.calibre-ebook.com/linux-installer.sh
+        dest: /tmp/linux-installer.sh
+    - name: Installing Calibre
+      script: /tmp/linux-installer.sh

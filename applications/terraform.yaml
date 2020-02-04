@@ -1,0 +1,17 @@
+---
+  - name: Terraform Setup 
+    hosts: localhost
+    connection: local
+    become: yes
+    gather_facts: no
+    tasks:
+      - name: Downloading Terraform zip file
+        get_url: 
+          url: https://releases.hashicorp.com/terraform/0.12.20/terraform_0.12.20_linux_amd64.zip
+          dest: /tmp/terraform_0.12.20_linux_amd64.zip
+      - name: Unzipping Terraform binary
+        unarchive:
+          src: /tmp/terraform_0.12.20_linux_amd64.zip
+          dest: /tmp
+      - name: Moving Terraform to /usr/bin
+        command: mv /tmp/terraform /usr/bin
