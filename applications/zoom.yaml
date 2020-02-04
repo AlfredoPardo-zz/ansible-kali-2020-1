@@ -1,0 +1,10 @@
+---
+  - name: Setup Zoom
+    hosts: localhost
+    connection: local
+    become: yes
+    gather_facts: no
+    tasks:
+      - name: Install Zoom Debian Package
+        apt:
+          deb: https://zoom.us/client/latest/zoom_amd64.deb

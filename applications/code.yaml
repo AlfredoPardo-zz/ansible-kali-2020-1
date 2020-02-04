@@ -1,0 +1,10 @@
+---
+  - name: Setup Visual Studio Code
+    hosts: localhost
+    connection: local
+    become: yes
+    gather_facts: no
+    tasks:
+      - name: Install Visual Studio Code Debian Package
+        apt:
+          deb: https://go.microsoft.com/fwlink/?LinkID=760868
