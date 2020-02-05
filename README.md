@@ -4,10 +4,10 @@
 - Calibre
 - Docker
 - Docker Compose
-- Freemind
 - Google Chrome
 - KeepassX
 - Slack
+- Spotify
 - Terraform
 - Visual Studio Code
 - Zoom

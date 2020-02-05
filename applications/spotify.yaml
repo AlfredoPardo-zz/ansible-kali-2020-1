@@ -1,0 +1,22 @@
+---
+- name: Spotify Setup
+  hosts: localhost
+  connection: local
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: Adding the Spotify APT signing key
+    apt_key:
+      url: https://download.spotify.com/debian/pubkey.gpg
+      state: present
+  - name: Adding the Spotify APT Repository  
+    apt_repository:
+      repo: deb http://repository.spotify.com stable non-free
+      state: present
+      filename: /etc/apt/sources.list.d/spotify.list
+  - name: Updating the Repositories Cache
+    apt:
+      update_cache: yes
+  - name: Installing Spotify Client Package
+    apt:
+      pkg: spotify-client
