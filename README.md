@@ -9,6 +9,7 @@
 - Slack
 - Spotify
 - Terraform
+- VirtualBox / Vagrant
 - Visual Studio Code
 - Zoom
 
